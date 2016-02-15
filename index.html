@@ -1,0 +1,35 @@
+<!-- A thinkster app -->
+<html>
+<head>
+	<title>Angular Services</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<style type="text/css">
+		.form-control{
+			width: 100px;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="container text-center">
+		<div ng-app="app">
+			<h1>Services</h1><br>
+			<div ng-controller="ListCtrl as list">
+				<p ng-repeat="message in list.messages"> {{ message.id }}: {{ message.text }} </p>
+			</div>
+
+			<div ng-controller="PostCtrl as post">
+				<form ng-submit="post.addMessage(post.newMessage)">
+					<input type="text" ng-model="post.newMessage" class="form-control"><br>
+					<button class="btn btn-primary" type="submit">Add Message</button>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+</html>
